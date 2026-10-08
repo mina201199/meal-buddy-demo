@@ -58,8 +58,8 @@ hr, .divider { height: 1px; border: 0; background: var(--line); margin: 20px 0; 
 .battery::after { content: ""; position: absolute; top: 2px; right: -3px; width: 2px; height: 4px; background: var(--ink); }
 .brandbar { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 7px 21px 9px; flex-shrink: 0; }
 .brand { display: inline-flex; align-items: center; gap: 7px; color: var(--ink); font-size: 21px; font-weight: 850; letter-spacing: -1px; text-decoration: none; min-height: 44px; }
-.brand-symbol { display: grid; place-items: center; width: 31px; height: 31px; background: var(--orange-bright); border-radius: 10px; color: white; font-size: 26px; line-height: 1; }
-.brand-en { font-size: 11px; font-weight: 500; letter-spacing: -.2px; padding-left: 3px; }
+.brand-symbol { display: block; width: 42px; height: 42px; flex-shrink: 0; }
+.brand > span { color: #4d2e20; font-family: "Arial Rounded MT Bold", "Microsoft JhengHei", sans-serif; font-weight: 900; letter-spacing: 1px; }
 .demo-badge { display: flex; align-items: center; gap: 5px; padding: 6px 8px; border: 1px solid #d8decd; border-radius: 7px; font-size: 9px; letter-spacing: 1px; font-weight: 700; color: var(--green); }
 .status-dot { display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--green); }
 .demo-disclosure { flex-shrink: 0; border-block: 1px solid var(--line); padding: 6px 12px; text-align: center; color: #7b6f5e; background: #f3eee3; font-size: 10px; line-height: 1.5; }
@@ -233,9 +233,9 @@ dialog[open] { animation: sheet-in .2s ease-out; }
 }
 @media (min-width: 1050px) {
   .desktop-note { display: block; position: absolute; width: 240px; right: calc(50% + 268px); top: 50%; transform: translateY(-48%); }
-  .note-mark { position: relative; display: inline-block; font-size: 37px; letter-spacing: -4px; font-weight: 850; margin-bottom: 38px; }
-  .note-mark span { color: var(--orange); }
-  .note-mark i { display: inline-block; width: 7px; height: 7px; margin-left: 6px; border-radius: 50%; background: var(--green); }
+  .note-mark { display: inline-flex; align-items: center; gap: 12px; font-size: 37px; letter-spacing: 1px; font-weight: 900; margin-bottom: 38px; }
+  .note-mark img { width: 64px; height: 64px; }
+  .note-mark span { color: #4d2e20; font-family: "Arial Rounded MT Bold", "Microsoft JhengHei", sans-serif; }
   .desktop-note .eyebrow { font-size: 9px; letter-spacing: 1.7px; color: #88795f; }
   .desktop-note h1 { font-family: "Noto Serif TC", "PMingLiU", serif; margin: 18px 0 22px; font-size: 37px; font-weight: 600; line-height: 1.6; letter-spacing: 1px; }
   .desktop-note > p:not(.eyebrow) { color: #827561; font-size: 13px; line-height: 1.9; }
@@ -258,7 +258,6 @@ dialog[open] { animation: sheet-in .2s ease-out; }
   #app details > summary { padding-inline: 11px; }
   [data-view] { padding: 20px 14px 24px; }
   .brandbar { padding-inline: 15px; }
-  .brand-en { font-size: 10px; }
   .page-head h1, .page-head h2 { font-size: 24px; }
   .hero { padding: 18px 15px; }
   .hero-copy h1, .hero-copy h2 { font-size: 24px; }
