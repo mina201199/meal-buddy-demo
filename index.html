@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#faf7ef">
+  <meta name="description" content="飯友：從一頓想吃的飯，開始一段剛剛好的陪伴。純本機互動示範。">
+  <title>飯友 Meal Buddy · 好好吃飯，一起更好</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="data.js" defer></script>
+  <script src="logic.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <aside class="desktop-note" aria-label="飯友設計介紹">
+    <div class="note-mark" aria-hidden="true">飯<span>友</span><i></i></div>
+    <p class="eyebrow">A LITTLE COMPANY. A GOOD MEAL.</p>
+    <h1>好好吃飯，<br>一起更好。</h1>
+    <p>從今天想吃的那一口，<br>遇見剛好也想吃的朋友。</p>
+    <div class="note-rule"></div>
+    <p class="note-caption"><span class="status-dot" aria-hidden="true"></span> 先選餐廳，再找飯友</p>
+    <p class="note-fine">MEAL BUDDY / INTERACTIVE DEMO<br>純交友共餐 · 18 歲以上</p>
+  </aside>
+
+  <div class="phone">
+    <div class="statusbar" aria-label="模擬時間 12:00">
+      <span>12:00 <span class="status-demo">模擬</span></span>
+      <span class="status-icons" aria-hidden="true"><i class="signal"></i><span>◉</span><i class="battery"></i></span>
+    </div>
+    <header class="brandbar">
+      <a class="brand" href="./index.html" aria-label="飯友首頁"><span class="brand-symbol" aria-hidden="true">♨</span>飯友<span class="brand-en">meal buddy</span></a>
+      <span class="demo-badge"><span class="status-dot" aria-hidden="true"></span> DEMO</span>
+    </header>
+    <div class="demo-disclosure">虛構餐廳・人物・評分・訊息｜AI／語音皆為模擬</div>
+
+    <main id="app" tabindex="-1" aria-label="飯友應用程式">
+      <section id="homeView" data-view="home" aria-label="吃什麼">
+        <div class="page-head"><p class="eyebrow">GOOD FOOD, GOOD COMPANY</p><h2>今天，想吃點什麼？</h2><p class="muted">一頓好飯，也可以是一段新友誼。</p></div>
+        <div class="hero"><div class="hero-copy"><span class="tag">你的下一頓好飯</span><h2>跟著胃口走，<br>讓飯友同行。</h2><p>正在準備今日的餐廳與飯友…</p></div><div class="hero-art" aria-hidden="true"></div></div>
+        <noscript><p class="notice">請啟用 JavaScript 以操作本機示範。所有餐廳、人物及 AI 結果均為虛構資料。</p></noscript>
+      </section>
+      <section id="buddiesView" data-view="buddies" aria-label="找飯友" hidden></section>
+      <section id="mealsView" data-view="meals" aria-label="飯局" hidden></section>
+      <section id="profileView" data-view="profile" aria-label="我的" hidden></section>
+      <section id="restaurantView" data-view="restaurant" aria-label="餐廳與用餐意向" hidden></section>
+    </main>
+
+    <nav id="bottomNav" aria-label="主要導覽">
+      <button type="button" data-nav="home" class="active" aria-current="page"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10h16c0 5-3 8-8 8s-8-3-8-8Zm2 11h12M8 3v3m4-4v4m4-3v3"/></svg><span>吃什麼</span></button>
+      <button type="button" data-nav="buddies"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3"/><path d="M3 20v-2a6 6 0 0 1 12 0v2M16 5a3 3 0 0 1 0 6m3 9v-2a6 6 0 0 0-2-4"/></svg><span>找飯友</span></button>
+      <button type="button" data-nav="meals"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="16" rx="3"/><path d="M8 3v4m8-4v4M4 11h16m-12 5h3m3 0h2"/></svg><span>飯局</span></button>
+      <button type="button" data-nav="profile"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21v-2a8 8 0 0 1 16 0v2"/></svg><span>我的</span></button>
+    </nav>
+
+    <dialog id="profileDialog" aria-label="飯友完整資料"></dialog>
+    <dialog id="inviteSheet" aria-label="邀請一起吃飯"></dialog>
+    <dialog id="groupDialog" aria-label="多人飯局"></dialog>
+    <dialog id="chatDialog" aria-label="示範聊天室"></dialog>
+    <div id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+  </div>
+</body>
+</html>
